@@ -25,7 +25,7 @@ app.keys = ["heys", "keyssss"];
 app.use(
   session({
     key: "com",
-    prefix: "cn",
+    prefix: "koa",
     store: new Redis()
   })
 );

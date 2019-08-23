@@ -1,7 +1,7 @@
 const router = require("koa-router")();
 
 router.get("/", async (ctx, next) => {
-  // ctx.cookies.set("pvid", Math.random());
+  ctx.cookies.set("pvid", Math.random());
   global.console.log("test console log");
   await ctx.render("index", {
     title: "Hello Koa 2!"

@@ -32,7 +32,7 @@ router.post("/addPerson", async function(ctx) {
 });
 
 // find
-router.get("/getPerson", async function(ctx) {
+router.post("/getPerson", async function(ctx) {
   let code = 0;
   try {
     const result = await Person.findOne({ name: ctx.request.body.name });
@@ -88,3 +88,4 @@ router.get("/fix", async function(ctx) {
 });
 
 module.exports = router;
+ 
