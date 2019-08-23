@@ -10,6 +10,9 @@ const dbConfig = require("./dbs/config");
 const Redis = require("koa-redis");
 const session = require("koa-generic-session");
 const pv = require("./middleware/koa-pv");
+const m1 = require("./middleware/m1");
+const m2 = require("./middleware/m2");
+const m3 = require("./middleware/m3");
 
 const index = require("./routes/index");
 const users = require("./routes/users");
@@ -27,7 +30,21 @@ app.use(
   })
 );
 
-// middlewares
+
+/**
+ * 中间件 
+ * 从上到下去引用，洋葱结构。
+ * m1 middleware start!
+ * m2 middleware start!
+ * m3 middleware start!
+ * 
+ * m3 end!
+ * m2 end!
+ * m1 end!
+ */
+app.use(m1())
+app.use(m2())
+app.use(m3())
 app.use(pv())
 app.use(
   bodyparser({

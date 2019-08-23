@@ -1,1 +1,0 @@
-git add -A && git commit -m "update cookies" && git pull && git push
