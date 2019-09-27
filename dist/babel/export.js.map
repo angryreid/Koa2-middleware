@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../examples/babel/export.js"],"names":["name","age"],"mappings":";;;;;AAAO,IAAMA,sBAAO,OAAb;AACA,IAAMC,oBAAM,EAAZ;;kBAEQ;AACbD,YADa;AAEbC;AAFa,C","file":"export.js","sourcesContent":["export const name = \"derek\";\nexport const age = 16;\n\nexport default {\n  name,\n  age\n};\n"]}

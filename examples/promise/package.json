@@ -1,0 +1,19 @@
+{
+  "name": "koa",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/angryreid/Koa2-middleware.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/angryreid/Koa2-middleware/issues"
+  },
+  "homepage": "https://github.com/angryreid/Koa2-middleware#readme"
+}
