@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon -w examples --exec \"babel-node examples/babel --presets env\"",
     "build": "rimraf dist && babel examples -s -D -d dist --presets env",
-    "prod": "node dist"
+    "prod": "node dist",
+    "server": "nodemon server"
   },
   "repository": {
     "type": "git",
@@ -20,6 +21,8 @@
   },
   "homepage": "https://github.com/angryreid/Koa2-middleware#readme",
   "dependencies": {
+    "koa": "^2.4.1",
+    "koa-logger": "^3.2.1",
     "node-fetch": "^2.6.0"
   },
   "devDependencies": {
