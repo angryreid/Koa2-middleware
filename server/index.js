@@ -1,36 +1,19 @@
 const Koa = require("koa");
 const logger = require("koa-logger");
-
+const session = require("koa-session");
 const app = new Koa();
 
-// everything is middleware
-
-const md1 = async (ctx, next) => {
-  ctx.type = "text/html;charset=utf-8";
-  await next();
-  ctx.body = ctx.body + " md1";
-};
-
-const md2 = async (ctx, next) => {
-  ctx.body = "Hi";
-  await next();
-  ctx.body = ctx.body + " md2";
-};
-
-const md3 = async (ctx, next) => {
-  ctx.body = ctx.body + " Luck";
-  await next();
-  ctx.body = ctx.body + " md3";
-};
+app.keys = ["Hi Luck"];
 
 app.use(logger());
-app.use(md1);
-app.use(md2);
-app.use(md3);
+app.use(session(app));
 
-// app.use(async (ctx, next) => {
-//   ctx.type = "text/html;charset=utf-8";
-//   ctx.body = "Hi Luke";
-// });
+app.use(ctx => {
+  if (ctx.path === "/favicon.ico") return;
+
+  let n = ctx.session.views || 0;
+  ctx.session.views = ++n;
+  ctx.body = n + " views";
+});
 
 app.listen(2333);

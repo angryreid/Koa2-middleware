@@ -8,7 +8,8 @@
     "dev": "nodemon -w examples --exec \"babel-node examples/babel --presets env\"",
     "build": "rimraf dist && babel examples -s -D -d dist --presets env",
     "prod": "node dist",
-    "server": "nodemon server"
+    "server": "nodemon server",
+    "clear": "rimraf node_modules"
   },
   "repository": {
     "type": "git",
@@ -23,6 +24,7 @@
   "dependencies": {
     "koa": "^2.4.1",
     "koa-logger": "^3.2.1",
+    "koa-session": "^5.12.3",
     "node-fetch": "^2.6.0"
   },
   "devDependencies": {
