@@ -6,7 +6,7 @@ const onerror = require("koa-onerror");
 const bodyparser = require("koa-bodyparser");
 const logger = require("koa-logger");
 const mongoose = require("mongoose");
-const dbConfig = require("./dbs/config");
+// const dbConfig = require("./dbs/config");
 // const Redis = require("koa-redis");
 const session = require("koa-generic-session");
 
@@ -37,7 +37,7 @@ app.use(require("koa-static")(__dirname + "/public"));
 
 app.use(
   views(__dirname + "/views", {
-    extension: "ejs"
+    extension: "pug"
   })
 );
 

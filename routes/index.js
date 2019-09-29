@@ -4,7 +4,9 @@ router.get("/", async (ctx, next) => {
   ctx.cookies.set("pvid", Math.random());
   global.console.log("test console log");
   await ctx.render("index", {
-    title: "Hello Koa 2!"
+    title: "Hello Koa 2!",
+    me: "derek",
+    you: "emma"
   });
 });
 
@@ -15,7 +17,7 @@ router.get("/string", async (ctx, next) => {
 router.get("/json", async (ctx, next) => {
   ctx.body = {
     title: "koa2 json",
-    cookies: ctx.cookies.get('pvid')
+    cookies: ctx.cookies.get("pvid")
   };
 });
 
