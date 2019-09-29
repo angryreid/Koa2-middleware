@@ -1,0 +1,12 @@
+{
+  "presets": ["env", "stage-0", "react"],
+  "plugins": [
+    "transform-runtime",
+    "transform-decorators-legacy",
+    "transform-class-properties"
+  ]
+}
+
+// 安装打包所需的babel配置
+
+// npm i -S babel-preset-env babel-preset-stage-0 babel-preset-react babel-plugin-transform-runtime babel-plugin-transform-decorators-legacy 
