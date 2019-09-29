@@ -1,30 +1,26 @@
 {
-  "name": "koa2-learn",
-  "version": "0.1.0",
-  "private": true,
+  "name": "koa2-middleware",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
   "scripts": {
-    "start": "node bin/www",
-    "dev": "./node_modules/.bin/nodemon bin/www",
-    "prd": "pm2 start bin/www",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/angryreid/Koa2-middleware.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/angryreid/Koa2-middleware/issues"
+  },
+  "homepage": "https://github.com/angryreid/Koa2-middleware#readme",
   "dependencies": {
-    "debug": "^2.6.3",
-    "ejs": "~2.3.3",
-    "koa": "^2.2.0",
-    "koa-bodyparser": "^3.2.0",
-    "koa-convert": "^1.2.0",
-    "koa-generic-session": "^2.0.1",
-    "koa-json": "^2.0.2",
-    "koa-logger": "^2.0.1",
-    "koa-onerror": "^1.2.1",
-    "koa-redis": "^4.0.0",
-    "koa-router": "^7.1.1",
-    "koa-static": "^3.0.0",
-    "koa-views": "^5.2.1",
-    "mongoose": "^5.5.7"
+    "koa": "^2.8.2"
   },
   "devDependencies": {
-    "nodemon": "^1.8.1"
+    "nodemon": "^1.19.2"
   }
 }
