@@ -4,6 +4,7 @@
  * Email : angried@163.com
  * -----
  * Description: Trailers 剧场预告片,影院预告片,剧场版预告片
+ * 子进程获取数据
  */
 
 const puppeteer = require("puppeteer");
@@ -68,5 +69,10 @@ const sleep = time =>
   });
 
   browser.close();
-  console.log(result);
+  // console.log(result);
+
+  // 发送获取到的数据
+  process.send({result});
+  process.exit(0);
+  // 进程退出
 })();
