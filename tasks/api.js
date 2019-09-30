@@ -3,7 +3,7 @@
  * Author : Derek
  * Email : angried@163.com
  * -----
- * Description: 豆瓣 API获取数据
+ * Description: 豆瓣 API获取数据 详情
  */
 
 //  豆瓣接口新增 apikey为必填字段

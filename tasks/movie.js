@@ -3,7 +3,7 @@
  * Author : Derek
  * Email : angried@163.com
  * -----
- * Description: get movie
+ * Description: get movie list
  */
 
 const cp = require("child_process");

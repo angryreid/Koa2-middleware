@@ -9,7 +9,7 @@
 const puppeteer = require("puppeteer");
 
 const base = `https://movie.douban.com/subject/`;
-const doubanId = `30413052`;
+const doubanId = `26709258`;
 
 // 等待定时器
 const sleep = time =>
