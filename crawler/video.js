@@ -48,7 +48,6 @@ const sleep = time =>
   });
 
   let video;
-  console.log(result);
   if (result.link) {
     await page.goto(result.link, {
       waitUntil: "networkidle2"
