@@ -12,7 +12,7 @@ const session = require("koa-generic-session");
 
 const User = require("./dbs/models/user");
 
-const index = require("./routes/index");
+const router = require("./server/route");
 // const users = require("./routes/users");
 
 // error handler
@@ -44,8 +44,7 @@ app.use(
 );
 
 // routes
-app.use(index.routes(), index.allowedMethods());
-// app.use(users.routes(), users.allowedMethods());
+app.use(router.routes(), router.allowedMethods());
 
 // mongoose
 mongoose
@@ -56,7 +55,7 @@ mongoose
     global.console.log("success connected to mongodb");
     (() => {
       // require("./tasks/movie");
-      require("./tasks/api");
+      // require("./tasks/api");
     })();
   })
   .catch(err => {

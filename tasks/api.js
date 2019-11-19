@@ -81,10 +81,6 @@ async function fetchMovieItem(item) {
           let cat = await Category.find({
             name: category
           });
-
-          console.log(cat.movies);
-          console.log(cat)
-          console.log("-----------------")
           if (!cat.length) {
             // 查出来分类为空
             cat = new Category({
@@ -132,7 +128,7 @@ async function fetchMovieItem(item) {
       });
       // 设置上映日期
       movie.pubdates = pubdates;
-      return;
+      // return;
       await movie.save();
     }
   }
