@@ -1,9 +1,13 @@
 const Router = require("koa-router");
-const route = new Router({
-  prefix: "/movies"
-});
+const route = new Router();
 
 const Movie = require("../dbs/models/movie");
+
+
+@controller("/api/v/movies")
+
+eport
+
 
 route.get("/all", async (ctx, next) => {
   const movies = await Movie.find({}).sort({

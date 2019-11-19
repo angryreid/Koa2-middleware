@@ -1,0 +1,6 @@
+class Boy {
+  @speak
+  run(){
+    
+  }
+}
