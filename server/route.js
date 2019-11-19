@@ -4,9 +4,9 @@ const route = new Router();
 const Movie = require("../dbs/models/movie");
 
 
-@controller("/api/v/movies")
+// @controller("/api/v/movies")
 
-eport
+// eport
 
 
 route.get("/all", async (ctx, next) => {
