@@ -6,9 +6,11 @@ const onerror = require("koa-onerror");
 const bodyparser = require("koa-bodyparser");
 const logger = require("koa-logger");
 const mongoose = require("mongoose");
-// const dbConfig = require("./dbs/config");
+const dbConfig = require("./dbs/config");
 // const Redis = require("koa-redis");
 const session = require("koa-generic-session");
+
+const User = require("./dbs/models/user");
 
 const index = require("./routes/index");
 // const users = require("./routes/users");
@@ -46,16 +48,20 @@ app.use(index.routes(), index.allowedMethods());
 // app.use(users.routes(), users.allowedMethods());
 
 // mongoose
-// mongoose
-//   .connect(dbConfig.dbs, {
-//     useNewUrlParser: true
-//   })
-//   .then(() => {
-//     global.console.log("success connected to mongodb");
-//   })
-//   .catch(err => {
-//     global.console.log(err);
-//   });
+mongoose
+  .connect(dbConfig.dbs, {
+    useNewUrlParser: true
+  })
+  .then(() => {
+    global.console.log("success connected to mongodb");
+    (() => {
+      // require("./tasks/movie");
+      require("./tasks/api");
+    })();
+  })
+  .catch(err => {
+    global.console.log(err);
+  });
 
 // error-handling
 app.on("error", (err, ctx) => {

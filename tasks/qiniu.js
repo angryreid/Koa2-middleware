@@ -52,17 +52,6 @@ const uploadToQiniu = async (url, key) => {
           movie.posterKey = posterData.key;
         }
         console.log(movie);
-        // const result = {
-        //   doubanId: "26709258",
-        //   poster:
-        //     "https://img3.doubanio.com/view/photo/l_ratio_poster/public/p2568288336.jpg",
-        //   video:
-        //     "http://vt1.doubanio.com/201909301421/121d33003dc177eef4a8ed797e9b2833/view/movie/M/402510878.mp4",
-        //   cover: "https://img1.doubanio.com/img/trailer/medium/2566997598.jpg",
-        //   videoKey: "http://pymqzto5q.bkt.clouddn.com/zWt8XQAX5yh9toh2FCebQ.mp4",
-        //   coverKey: "http://pymqzto5q.bkt.clouddn.com/ptZDEeT4IH5TpyYNwVSnL.png",
-        //   posterKey: "http://pymqzto5q.bkt.clouddn.com/Sr6wABzkaW1TeGaqKlJ7M.png"
-        // };
       } catch (error) {
         console.log(error);
       }

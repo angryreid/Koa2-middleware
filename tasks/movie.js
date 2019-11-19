@@ -6,6 +6,7 @@
  * Description: get movie list
  */
 
+const Movie = require("../dbs/models/movie");
 const cp = require("child_process");
 const { resolve } = require("path");
 
@@ -31,9 +32,16 @@ const { resolve } = require("path");
     }
   });
 
-
   child.on("message", data => {
     let result = data.result;
-    console.log(result);
+    result.forEach(async item => {
+      let movies = await Movie.find({
+        doubanId: item.doubanId
+      });
+      if (!movies.length) {
+        let movie = new Movie(item);
+        await movie.save();
+      }
+    });
   });
 })();
