@@ -1,6 +1,6 @@
 const Bundler = require("parcel-bundler");
 
-const views = reuqire("koa-views");
+const views = require("koa-views");
 
 const serve = require("koa-static");
 

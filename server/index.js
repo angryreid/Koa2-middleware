@@ -8,7 +8,7 @@ const mongoose = require("mongoose");
 const dbConfig = require("./dbs/config");
 const { resolve } = require("path");
 const R = require("ramda");
-const MIDDLEWARES = ["router"];
+const MIDDLEWARES = ["router", "parcel"];
 const app = new Koa();
 
 // const Redis = require("koa-redis");

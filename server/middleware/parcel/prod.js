@@ -1,5 +1,5 @@
 
-const views = reuqire("koa-views");
+const views = require("koa-views");
 const serve = require("koa-static");
 const { resolve } = require("path");
 
