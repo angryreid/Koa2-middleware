@@ -3,13 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "start": "rm -rf dist && rm -rf .cache &&  NODE_ENV=development nodemon ./app.js",
+    "start": "rm -rf dist/ && rm -rf .cache &&  NODE_ENV=development nodemon ./app.js",
     "dev": "npm run start",
     "prd": "pm2 start bin/www",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "rm -rf dist && parcel build src/index.html --no-cache -d dist --public-url /dist"
   },
   "dependencies": {
+    "antd": "^3.26.0",
     "bcrypt": "^3.0.6",
     "debug": "^2.6.3",
     "glob": "^7.1.5",
@@ -27,12 +28,16 @@
     "lodash": "^4.17.15",
     "mongoose": "^5.5.7",
     "nanoid": "^2.1.1",
+    "parcel-bundler": "^1.12.3",
     "pug": "^2.0.4",
     "puppeteer": "^1.20.0",
     "qiniu": "^7.2.2",
     "ramda": "^0.26.1",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-router-dom": "^5.1.2",
+    "regenerator": "^0.13.1",
     "request": "^2.88.0",
-    "parcel-bundler": "^1.12.3",
     "request-promise-native": "^1.0.7"
   },
   "devDependencies": {
