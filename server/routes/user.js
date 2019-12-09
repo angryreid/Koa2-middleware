@@ -3,17 +3,17 @@ const {
   checkPassword
 } = require("../service/user");
 
-@controller("user")
+@controller("gift/user")
 export class UserController {
   @post("/")
   async login(ctx, next) {
-    let { email, password } = ctx.request.body;
-    const match = await checkPassword(email, password);
+    let { username, password } = ctx.request.body;
+    const match = await checkPassword(username, password);
 
     if(!match.user){
       return ctx.body = {
         success: false,
-        error: "no exist"
+        error: "用户不存在"
       }
     }
 
@@ -26,7 +26,7 @@ export class UserController {
     if(!match.match){
       return ctx.body = {
         success: false,
-        error: "password wrong"
+        error: "密码错误"
       }
     }
   }

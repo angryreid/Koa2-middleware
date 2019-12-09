@@ -1,15 +1,15 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
-const ObjectId = Schema.Types.ObjectId;
+const { ObjectId } = Schema.Types;
 
-const categorySchema = new Schema({
-  name: {
-    unique: true,
-    type: String
-  },
-  movies:[{
+const giftSchema = new Schema({
+  title: String,
+  startDate: String,
+  endDate: String,
+  gift: String,
+  userId: [{
     type: ObjectId,
-    ref: "Moive"
+    ref: "User"
   }],
   meta: {
     createdAt: {
@@ -23,7 +23,7 @@ const categorySchema = new Schema({
   }
 });
 
-categorySchema.pre("save", function(next){
+giftSchema.pre("save", function(next) {
   if (this.isNew) {
     this.meta.createdAt = this.updateAt = Date.now();
   } else {
@@ -33,4 +33,4 @@ categorySchema.pre("save", function(next){
   next();
 });
 
-module.exports = mongoose.model("Category", categorySchema);
+module.exports = mongoose.model("Gift", giftSchema);
