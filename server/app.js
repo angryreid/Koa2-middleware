@@ -8,7 +8,7 @@ const mongoose = require("mongoose");
 const dbConfig = require("./dbs/config");
 const { resolve } = require("path");
 const R = require("ramda");
-const MIDDLEWARES = ["router", "parcel"];
+const MIDDLEWARES = ["router"];
 const app = new Koa();
 
 // const Redis = require("koa-redis");
@@ -88,5 +88,3 @@ async function start() {
 }
 
 start();
-
-// module.exports = app;

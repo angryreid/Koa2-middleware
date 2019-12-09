@@ -3,11 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "start": "rm -rf dist/ && rm -rf .cache &&  NODE_ENV=development nodemon ./app.js",
+    "start": "nodemon ./server/app.js",
     "dev": "npm run start",
     "prd": "pm2 start bin/www",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "rm -rf dist && parcel build src/index.html --no-cache -d dist --public-url /dist"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
     "antd": "^3.26.0",
