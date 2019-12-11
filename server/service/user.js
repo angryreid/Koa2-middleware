@@ -7,10 +7,9 @@ export const checkPassword = async (username, password) => {
   if (user) {
     match = await user.comparePassword(password, user.password);
     if (match) {
-      let token = md5(md5(username + password));
+      let token = md5(md5(username + password + new Date().getTime()));
       user.token = token;
-      let s = await user.save();
-      console.log(s);
+      await user.save();
     }
   }
   return {

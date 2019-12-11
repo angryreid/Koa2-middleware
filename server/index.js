@@ -67,7 +67,7 @@ async function start() {
       useUnifiedTopology: true
     })
     .then(() => {
-      global.console.log("<<< success connected to mongodb");
+      global.console.log("<<< success connected to mongodb, server port on 1209");
       (() => {
         // require("./tasks/movie");
         // require("./tasks/api");
@@ -84,7 +84,7 @@ async function start() {
     console.error("server error", err, ctx);
   });
 
-  app.listen(2233);
+  app.listen(1209);
 }
 
 start();

@@ -20,6 +20,7 @@ export class UserController {
     if(match.match){
       return ctx.body = {
         success: true,
+        token: match.user.token
       }
     }
 

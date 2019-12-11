@@ -7,10 +7,15 @@ const giftSchema = new Schema({
   startDate: String,
   endDate: String,
   gift: String,
-  userId: [{
+  disable: {
+    required: true,
+    type: Boolean,
+    default: false
+  },
+  userId: {
     type: ObjectId,
     ref: "User"
-  }],
+  },
   meta: {
     createdAt: {
       type: Date,
@@ -29,7 +34,6 @@ giftSchema.pre("save", function(next) {
   } else {
     this.updateAt = Date.now();
   }
-
   next();
 });
 
